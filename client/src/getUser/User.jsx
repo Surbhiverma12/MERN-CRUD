@@ -61,6 +61,9 @@ const deleteUser = async (id)=> {
                     <td>{user.email}</td>
                     <td>{user.address}</td>
                     <td className='actionButtons'> 
+                    <Link to={`/view/`+user._id} type="button" className="btn btn-info">
+                    <i class="fa-solid fa-address-card"></i>
+                    </Link>
                     <Link to={`/update/`+user._id} type="button" className="btn btn-info">
                     <i className="fa-solid fa-pen-to-square"></i>
                     </Link>

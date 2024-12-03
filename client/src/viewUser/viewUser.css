@@ -1,0 +1,12 @@
+.addUser {
+    background-color: white;
+    width: 50%;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px rgba(0,0,0, 0.065);
+}
+
+.addUser .btn {
+    margin-bottom: 20px;
+}
