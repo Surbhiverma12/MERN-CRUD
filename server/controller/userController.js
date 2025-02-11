@@ -70,12 +70,12 @@ export const updateUser = async (req, res) => {
         if(!user) {
             return res.status(404).json({message: "Users Data not found."})
         }
-        let {email} = req.body
-        const userExist = await User.findOne({email})
+        // let {email} = req.body
+        // const userExist = await User.findOne({email})
         
-        if (userExist) {
-            return res.status(400).json({message: "User already exists with this email. Try different email."})
-        }
+        // if (userExist) {
+        //     return res.status(400).json({message: "User already exists with this email. Try different email."})
+        // }
         const updatedData = await User.findByIdAndUpdate(id, req.body, {new: true})
         // res.status(200).json(updatedData)
         res.status(200).json({message: "User updated successfully."});
