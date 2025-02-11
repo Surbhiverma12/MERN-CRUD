@@ -13,16 +13,26 @@ dotenv.config()
 const PORT = process.env.PORT || 3000;
 const MONGO_URL = process.env.MONGO_URL;
 
-mongoose
-        .connect(MONGO_URL)
-        .then(() => {
-            console.log("DB is connected...")
-            app.listen(PORT,() =>{
-                console.log(`Server is running on port : ${PORT}`)
-            })
+// mongoose
+//         .connect(MONGO_URL)
+//         .then(() => {
+//             console.log("DB is connected...")
+//             app.listen(PORT,() =>{
+//                 console.log(`Server is running on port : ${PORT}`)
+//             })
+//         })
+//         .catch((err) => {
+//             console.log(err)
+//         })
+
+// console.log(MONGO_URL)
+
+mongoose.connect( MONGO_URL)
+        .then(() => {console.log("Connected to MongoDB Atlas")
+        app.listen(PORT,() =>{
+            console.log(`Server is running on port : ${PORT}`)
         })
-        .catch((err) => {
-            console.log(err)
-        })
+    })
+        .catch(err => console.error("MongoDB connection error:", err));
 
 app.use("/api", route)

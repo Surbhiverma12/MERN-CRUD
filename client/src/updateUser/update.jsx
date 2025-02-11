@@ -40,6 +40,9 @@ const submitForm = async(e) => {
     navigate("/")
   })
   .catch((error) => {
+    if (error.response && error.response.status == 400){
+      toast.error(error.response.data.message, {position: "top-right"})
+    }
     console.log(error)
   })
 }

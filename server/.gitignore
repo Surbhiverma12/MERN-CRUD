@@ -1,1 +1,12 @@
 .env
+
+node_modules/
+*.log
+
+Thumbs.db
+
+.vscode/
+.idea/
+
+package-lock.json
+yarn.lock
